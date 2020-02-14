@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:flutter_drinks/main.dart';
+import 'package:flutter_drinks/AppData.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
@@ -26,5 +27,12 @@ void main() {
     // Verify that our counter has incremented.
     expect(find.text('0'), findsNothing);
     expect(find.text('1'), findsOneWidget);
+  });
+
+  test('AppData class', () {
+    AppData app = new AppData();
+    expect(app.counter, 0);
+    app.updateCounter();
+    expect(app.counter, 1);
   });
 }
